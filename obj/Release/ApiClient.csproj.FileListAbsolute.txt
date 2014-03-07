@@ -1,0 +1,4 @@
+C:\Projects\Temp\ApiClient\ApiClient\Bin\Release\ApiClient.dll
+C:\Projects\Temp\ApiClient\ApiClient\Bin\Release\ApiClient.pdb
+C:\Projects\Temp\ApiClient\ApiClient\obj\Release\ApiClient.dll
+C:\Projects\Temp\ApiClient\ApiClient\obj\Release\ApiClient.pdb
