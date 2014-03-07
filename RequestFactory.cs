@@ -17,7 +17,7 @@ namespace ApiClient
                 throw new ArgumentNullException("uri", "Uri can't be Null");
             }
 
-            //Only add querystring for GET requests
+            //Only add a querystring for GET requests
             string fullUri = uri;
 
             if (method == Method.Get)
