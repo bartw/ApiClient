@@ -80,7 +80,7 @@ namespace ApiClient
             parameters.Add(new Parameter("oauth_signature_method", "HMAC-SHA1"));
             parameters.Add(new Parameter("oauth_version", "1.0"));
 
-            if (accessToken != null)
+            if (accessToken != null && accessToken.Key != null)
             {
                 parameters.Add(new Parameter("oauth_token", accessToken.Key));
             }
@@ -153,7 +153,7 @@ namespace ApiClient
 
         private static string GenerateSignature(string uri, Method method, string consumerSecret, Token token, IEnumerable<Parameter> parameters)
         {
-            var hmacKeyBase = consumerSecret.UrlEncode() + "&" + ((token == null) ? "" : token.Secret).UrlEncode();
+            var hmacKeyBase = consumerSecret.UrlEncode() + "&" + ((token == null || token.Secret == null) ? "" : token.Secret).UrlEncode();
             using (var hmacsha1 = new HMACSHA1(Encoding.UTF8.GetBytes(hmacKeyBase)))
             {
                 var orderedParameters = parameters.OrderBy(p => p.Key).ThenBy(p => p.Value);
