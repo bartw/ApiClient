@@ -48,7 +48,7 @@ namespace ApiClient
                 }
             }
 
-            if (!string.IsNullOrEmpty(consumerKey) && !string.IsNullOrEmpty(accessKey))
+            if (!string.IsNullOrEmpty(consumerKey) && !string.IsNullOrEmpty(consumerSecret))
             {
                 AddOAuthHeader(request.Headers, uri, method, new Token(consumerKey, consumerSecret), new Token(accessKey, accessSecret), verifier);
             }
